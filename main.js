@@ -71,7 +71,7 @@ function treemap(element) {
     });
 
     color.domain(keys);
-    legend(keys, color);
+    legend("legend_" + element, keys, color);
 
     var treemap = d3.treemap()
         .size([width, height])
