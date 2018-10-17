@@ -27,4 +27,5 @@ Le projet est à rendre pour le *vendredi 26 octobre 9h30*.
 ## Taches avancées
  - [A] Implémenter le bouton "Only Joe" (recharge les graphiques avec les taches de Joe uniquement)
  - [B] Implémenter le bouton "Only Done" (recharge les graphiques avec les taches DONE uniquement)
- - [C] Ajouter un bubble chart, avec le statut sur l'axe X, la priorité sur l'axe Y, la couleur en fonction du status et le diamètre en fonction du temps de la tache. Attention, il vous faudra randomizer un peu la position des taches (pour qu'elles ne soient pas toutes au meme endroit)
+ - [C] Implémenter le bouton "All tasks" (recharge les graphiques avec toutes les taches)
+ - [D] Ajouter un bubble chart, avec le statut sur l'axe X, la priorité sur l'axe Y, la couleur en fonction de la personne et le diamètre en fonction du temps de la tache. Attention, il vous faudra randomizer un peu la position des taches (pour qu'elles ne soient pas toutes au meme endroit)
