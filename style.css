@@ -20,15 +20,6 @@ main {
 
 /*Footer CSS*/
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
-body{
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight:300;
-  background-color:lightblue;
-  color:#FFF;
-}
-section{
-  text-align:center;
-}
 .footer #button{
 	width:35px;
 	height:35px;
