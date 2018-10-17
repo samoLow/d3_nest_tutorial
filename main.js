@@ -1,9 +1,16 @@
 // this is the foirst commentary, try to commit & push
+
+// We declare 2 global variable
 var data = undefined;
 var margin = {top: 20, right: 20, bottom: 30, left: 40};
 
+//We declare a function called legend that uses parameters named "keys" and "z"
 function legend(element, keys, z) {
+
+    //We declare a numeric variable that we initialize at 15
     var legendRectSize = 15;
+    //Declares an SVG type variable, this selects the SVG with the ID in the name of the element set as parameter
+    //We cascade the attributes "width" in 400 and the attribute "height" in 30, on the SVG selected by the element
     var svg = d3.select('#'+element).append('svg')
         .attr('width', 400)
         .attr('height', 30);
