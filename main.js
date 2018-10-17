@@ -160,7 +160,7 @@ function bar_chart(element, property) {
 
     var z = d3.scaleOrdinal(d3.schemeCategory10);
 
-    if (<!--property === "time"-->) {
+    if (property === "time") {
         x.domain([0, d3.max(nested_data.map(function (d) {
             return +d.key;
         })) + 1]);
