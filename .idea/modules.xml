@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/d3_nest_tutorial Samir.iml" filepath="$PROJECT_DIR$/.idea/d3_nest_tutorial Samir.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/d3_nest_tutorial.iml" filepath="$PROJECT_DIR$/.idea/d3_nest_tutorial.iml" />
     </modules>
   </component>
 </project>
