@@ -59,6 +59,9 @@ function treemap(element) {
         .key(function (d) {
             return d.who;
         })
+        .key(function (d){
+            return d.time
+        })
         .rollup(function (d) {
             return d.length;
         })
