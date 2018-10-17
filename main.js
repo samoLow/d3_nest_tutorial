@@ -220,10 +220,10 @@ $(function () {
         });
         bar_chart("bcs", "status");
         bar_chart("bcw", "who");
+        bar_chart("bct", "time");
         treemap("status");
         <!-- add chart of priority -->
         bar_chart("bcp", "priority");
-        bar_chart("bct", "time");
 
 
     });
