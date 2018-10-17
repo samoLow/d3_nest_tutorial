@@ -221,6 +221,8 @@ $(function () {
         bar_chart("bcs", "status");
         bar_chart("bcw", "who");
         treemap("status");
+        <!-- add chart of priority -->
+        bar_chart("bcp", "priority");
 
     });
 
