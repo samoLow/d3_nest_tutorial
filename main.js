@@ -225,7 +225,10 @@ $(function () {
         <!-- add chart of priority -->
         bar_chart("bcp", "priority");
 
+        
+
 
     });
+    console.log(data);
 
 });
