@@ -1,7 +1,9 @@
 // this is the foirst commentary, try to commit & push
 var data = undefined;
 var margin = {top: 20, right: 20, bottom: 30, left: 40};
-
+var count_tot_time_t = 0;
+var count_tot_time_joe = 0;
+var count_tot_time_prog =0;
 
 function legend(element, keys, z) {
     var legendRectSize = 15;
@@ -216,6 +218,10 @@ function bar_chart(element, property) {
         .call(d3.axisLeft(y).ticks(null, "s"))
 }
 
+function writte_info(id_element, property){
+    $("#" + id_element).append(" est : " + property);
+}
+
 $(function () {
     console.log("READY");
 
@@ -227,6 +233,9 @@ $(function () {
         data = d;
         data.forEach(function (d) {
             d.time = +d.time;
+            count_tot_time_t += d.time;
+            if (d["who"] === "Joe"){count_tot_time_joe += d.time;};
+            if(d["status"] === "DOING"){ count_tot_time_prog += d.time;};
         });
         bar_chart("bcs", "status");
         bar_chart("bcw", "who");
@@ -234,12 +243,15 @@ $(function () {
         treemap("status");
         <!-- add chart of priority -->
         bar_chart("bcp", "priority");
-
-        
-
+        console.log(d);
+        writte_info("ttask", count_tot_time_t);
+        writte_info("tjoe", count_tot_time_joe);
+        writte_info("tprog", count_tot_time_prog);
+        console.log(count_tot_time_prog);
+        console.log(count_tot_time_joe);
+        console.log(count_tot_time_t);
 
     });
 
-    console.log(data);
 
 });
