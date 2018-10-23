@@ -2,6 +2,7 @@
 var data = undefined;
 var margin = {top: 20, right: 20, bottom: 30, left: 40};
 
+
 function legend(element, keys, z) {
     var legendRectSize = 15;
     var svg = d3.select('#'+element).append('svg')
@@ -147,11 +148,16 @@ function bar_chart(element, property) {
 
     console.log("BARCHART DATA");
     console.log(nested_data);
+    if(property === "time"){
+        var x = d3.scaleLinear()
+            .rangeRound([0, width]);
 
-    var x = d3.scaleBand()
-        .rangeRound([0, width])
-        .paddingInner(0.1);
-
+    }
+    else{
+        x = d3.scaleBand()
+            .rangeRound([0, width])
+            .paddingInner(0.1);
+    }
     var y = d3.scaleLinear()
         .rangeRound([height, 0]);
 
@@ -190,7 +196,11 @@ function bar_chart(element, property) {
             return height - y(d.value.size);
         })
         .attr("width", function (d) {
-            return x.bandwidth();
+            if (property === "time") {
+                return (x(1)-x(0))*0.9;
+            } else {
+                return x.bandwidth();
+            }
         })
         .style("fill", function (d) {
             return z(d.key)
@@ -229,6 +239,7 @@ $(function () {
 
 
     });
+
     console.log(data);
 
 });
