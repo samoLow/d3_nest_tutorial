@@ -18,6 +18,7 @@ main {
 
 
 
+
 /*Footer CSS*/
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
 .footer #button{
@@ -88,6 +89,7 @@ height:100%;
 	width:500px;
 	float:left;
   text-align:center;
+    color: #ff0000;
 }
 .footer h3{
 	font-family: 'Helvetica';
