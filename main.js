@@ -1,9 +1,11 @@
-// this is the foirst commentary, try to commit & push
+// this is the first commentary, try to commit & push
 var data = undefined;
 var margin = {top: 20, right: 20, bottom: 30, left: 40};
 var count_tot_time_t = 0;
 var count_tot_time_joe = 0;
 var count_tot_time_prog =0;
+var custom_colors = ["#781423", "#7B498D", "#191E58", "#477087", "#0E553E", "#77B75B", "#CDD269", "#D4BC6A"];
+
 
 function legend(element, keys, z) {
     var legendRectSize = 15;
@@ -162,8 +164,8 @@ function bar_chart(element, property) {
     }
     var y = d3.scaleLinear()
         .rangeRound([height, 0]);
-
-    var z = d3.scaleOrdinal(d3.schemeCategory10);
+// custom colors are used here 
+    var z = d3.scaleOrdinal(custom_colors);
 
     if (property === "time") {
         x.domain([0, d3.max(nested_data.map(function (d) {
