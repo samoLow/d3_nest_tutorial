@@ -208,7 +208,52 @@ function bar_chart(element, property) {
         })
         .style("fill", function (d) {
             return z(d.key)
-        });
+        })
+        .on("mouseover", function(d){
+            d3.select(this)
+                .transition().duration(500)
+                .attr("fill", "red")
+                .attr("y", y(d.value.size) - 15)
+
+                .attr("height",  function (d) {
+                    return height - y(d.value.size) +10;
+                })
+                .attr("width", function (d) {
+                    if (property === "time") {
+                        return (x(1)-x(0))* 1.1;
+                    } else {
+                        return x.bandwidth() +10;
+                    }
+                })
+                .attr("x", function (d) {
+                    return x(d.key) -5
+                })
+
+        })
+        .on("mouseout", function(d){
+                d3.select(this)
+                    .transition().duration(500)
+                    .attr("fill", "red")
+                    .attr("y", y(d.value.size) )
+
+                    .attr("height",  function (d) {
+                        return height - y(d.value.size) ;
+                    })
+                    .attr("width", function (d) {
+                        if (property === "time") {
+                            return (x(1)-x(0))* 0.9;
+                        } else {
+                            return x.bandwidth() ;
+                        }
+                    })
+                    .attr("x", function (d) {
+                        return x(d.key)
+                    })
+
+            })
+
+
+    ;
 
     g.append("g")
         .attr("class", "axis")
