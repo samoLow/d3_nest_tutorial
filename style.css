@@ -12,8 +12,14 @@ main {
     font-size: 10px;
     fill: white;
 }
+.axis text{
+  font-size :12px;
+  fill : red;
+}
 
-
+.axis line{
+  stroke : yellow;
+}
 
 
 
