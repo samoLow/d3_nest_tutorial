@@ -212,7 +212,6 @@ function bar_chart(element, property) {
         .on("mouseover", function(d){
             d3.select(this)
                 .transition().duration(500)
-                .attr("fill", "red")
                 .attr("y", y(d.value.size) - 15)
 
                 .attr("height",  function (d) {
@@ -226,14 +225,18 @@ function bar_chart(element, property) {
                     }
                 })
                 .attr("x", function (d) {
-                    return x(d.key) -5
+                    if (property !== "time") {
+                        return x(d.key) -5;
+                    } else{
+                        return x(d.key)-2 ;
+
+                    }
                 })
 
         })
         .on("mouseout", function(d){
                 d3.select(this)
                     .transition().duration(500)
-                    .attr("fill", "red")
                     .attr("y", y(d.value.size) )
 
                     .attr("height",  function (d) {
@@ -246,7 +249,9 @@ function bar_chart(element, property) {
                             return x.bandwidth() ;
                         }
                     })
+
                     .attr("x", function (d) {
+
                         return x(d.key)
                     })
 
