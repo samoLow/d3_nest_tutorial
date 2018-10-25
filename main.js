@@ -42,7 +42,7 @@ function legend(element, keys, z) {
         });
 }
 
-function treemap(element) {
+function treemap(element, property_1, property_2) {
 
     $("#treemap_" + element).html("");
     $("#legend_" + element).html("");
@@ -59,10 +59,10 @@ function treemap(element) {
 
     var nested_data = d3.nest()
         .key(function (d) {
-            return d.status;
+            return d[property_1];
         })
         .key(function (d) {
-            return d.who;
+            return d[property_2];
         })
         .rollup(function (d) {
             return d.length;
@@ -213,7 +213,7 @@ function bar_chart(element, property) {
     g.append("g")
         .attr("class", "axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+        .call(d3.axisBottom(x))
 
     g.append("g")
         .attr("class", "axis")
@@ -252,6 +252,8 @@ $(function () {
         console.log(count_tot_time_prog);
         console.log(count_tot_time_joe);
         console.log(count_tot_time_t);
+        treemap( "status","status", "who");
+        treemap( "who","who", "priority");
 
     });
 
